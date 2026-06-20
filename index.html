@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity Dashboard</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Productivity Dashboard</h1>
+
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section class="dashboard">
+
+      <div class="card">
+        <h3>Completed Tasks</h3>
+        <p id="completedTasks">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Pomodoro Sessions</h3>
+        <p id="completedSessions">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Focus Time</h3>
+        <p id="focusTime">0 mins</p>
+      </div>
+
+      <div class="card">
+        <h3>Current Streak</h3>
+        <p id="streak">0</p>
+      </div>
+
+    </section>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- TODO SECTION -->
+      <section class="todo-section glass">
+
+        <h2>To-Do List</h2>
+
+        <div class="task-input">
+          <input type="text" id="taskInput" placeholder="Add a new task...">
+
+          <select id="prioritySelect">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <button id="addTaskBtn">Add</button>
+        </div>
+
+        <!-- SEARCH -->
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search tasks..."
+          class="search-box"
+        >
+
+        <!-- FILTERS -->
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+          <button class="filter-btn" data-filter="pending">Pending</button>
+        </div>
+
+        <!-- TASK STATS -->
+        <div class="task-stats">
+          <span>Total Tasks: <strong id="totalTasks">0</strong></span>
+        </div>
+
+        <!-- TASK LIST -->
+        <ul id="taskList"></ul>
+
+      </section>
+
+      <!-- POMODORO -->
+      <section class="pomodoro glass">
+
+        <h2>Pomodoro Timer</h2>
+
+        <!-- TIMER -->
+        <div class="timer-circle">
+          <h1 id="timerDisplay">25:00</h1>
+        </div>
+
+        <!-- SESSION BUTTONS -->
+        <div class="session-buttons">
+          <button class="session-btn active-session" data-session="work">
+            Work
+          </button>
+
+          <button class="session-btn" data-session="short">
+            Short Break
+          </button>
+
+          <button class="session-btn" data-session="long">
+            Long Break
+          </button>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="timer-controls">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+
+        <!-- CUSTOM SETTINGS -->
+        <div class="settings">
+
+          <div>
+            <label>Work</label>
+            <input type="number" id="workDuration" value="25">
+          </div>
+
+          <div>
+            <label>Short</label>
+            <input type="number" id="shortDuration" value="5">
+          </div>
+
+          <div>
+            <label>Long</label>
+            <input type="number" id="longDuration" value="15">
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SOUND -->
+  <audio id="alarmSound" src="sounds/alarm.mp3"></audio>
+
+</body>
+</html>
