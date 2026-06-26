@@ -64,6 +64,7 @@ JavaScript events
 Timers
 Local storage
 Responsive UI design
+
 🔮 Future Improvements
 User login system
 Cloud data storage
@@ -72,5 +73,4 @@ Task reminders
 Productivity analytics charts
 
 
-👨‍💻 Author
-Karanvir Singh
+
